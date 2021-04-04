@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/knowledgeFragment">
+
+    <fragment
+        android:id="@+id/knowledgeFragment"
+        android:name="com.example.studenttimemanagement.ui.home.KnowledgeFragment"
+        android:label="fragment_knowledge_list"
+        tools:layout="@layout/fragment_knowledge_list" >
+        <action
+            android:id="@+id/action_knowledgeFragment_to_skillFragment"
+            app:destination="@id/skillFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/skillFragment"
+        android:name="com.example.studenttimemanagement.ui.skill.SkillFragment"
+        android:label="skill_fragment"
+        tools:layout="@layout/skill_fragment" >
+        <argument
+            android:name="knowledgeArg"
+            app:argType="com.example.studenttimemanagement.model.Knowledge" />
+    </fragment>
+</navigation>
